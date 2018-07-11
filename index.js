@@ -41,18 +41,3 @@ module.exports = similarityFunction => {
         }
     }
 }
-
-const stringDistance = require('leven') // stringDistance('abc', 'edc') === 2
-const stringSimilarity = (a, b) => {
-    const maxLength = Math.max(a.length, b.length)
-    return maxLength === 0 ? 1 : (maxLength - stringDistance(a, b)) / maxLength
-} // stringSimilarity('abc', 'edc') === 0.3333333
-
-SS = module.exports(stringSimilarity)
-
-const x = new SS('foobar')
-const y = 'poo'
-
-console.log(stringDistance('foobar', 'poo'))
-console.log(x.equals(y))
-console.log(x.includes(y))
